@@ -1,0 +1,14 @@
+{% if data.employee %}
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-position-{{ department }}-{{ data.id }}" aria-expanded="false" aria-controls="flush-collapse-position-{{ department }}-{{ data.id }}">
+            {{ data.name }}
+        </button>
+    </h2>
+    <div id="flush-collapse-position-{{ department }}-{{ data.id }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            {% include 'employee.html' with department=department position=data.id data=data.employee %}
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,33 @@
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-employee-{{ department }}-{{ position }}" aria-expanded="false" aria-controls="flush-collapse-employee-{{ department }}-{{ position }}">
+            <span>Сотрудники</span>
+        </button>
+    </h2>
+    <div id="flush-collapse-employee-{{ department }}-{{ position }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <table class="table">
+              <thead>
+                <tr>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Отчество</th>
+                    <th scope="col">Прием на работу</th>
+                    <th scope="col">Заработная плата</th>
+                </tr>
+                <tbody>
+                    {% for employee in data %}
+                    <tr>
+                        <td>{{ employee.last_name }}</td>
+                        <td>{{ employee.first_name }}</td>
+                        <td>{{ employee.middle_name }}</td>
+                        <td>{{ employee.recruitment }}</td>
+                        <td>{{ employee.salary_size }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </thead>
+            </table>
+        </div>
+    </div>
+</div>

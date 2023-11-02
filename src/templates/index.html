@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+ <h1>Company </h1>
+<div>
+    <div class="accordion accordion-flush">
+  {% for item in data %}
+    {% include 'recurse.html' with department=item %}
+  {% endfor %}
+    </div>
+</div>
+{% endblock content %}
