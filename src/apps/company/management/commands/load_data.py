@@ -45,7 +45,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        for count in range(10000):
+        for count in range(50000):
             employee = apps.company.models.Employee()
             employee.last_name, employee.first_name, employee.middle_name = random.choice(self.data).split()
             employee.salary_size = random.randint(1000, 50000)
